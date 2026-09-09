@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_background">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/orqaga"
+        android:layout_width="56dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_back"
+        android:contentDescription="Back"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_back" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/btn_back"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="6dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="Trophy"
+            android:src="@drawable/ic_trophy" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/youre"
+                android:text="Score"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/counttxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/youre"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="396dp"
+        android:layout_height="396dp"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_back"
+        android:padding="2dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button1"
+            style="@style/Maygamebutton"
+            android:onClick="Onclickbutton"
+            android:tag="00"
+            tools:text="1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button2"
+            style="@style/Maygamebutton"
+            android:layout_toEndOf="@id/button1"
+            android:onClick="Onclickbutton"
+            android:tag="01"
+            tools:text="2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button3"
+            style="@style/Maygamebutton"
+            android:layout_toEndOf="@id/button2"
+            android:onClick="Onclickbutton"
+            android:tag="02"
+            tools:text="3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button4"
+            style="@style/Maygamebutton"
+            android:layout_toEndOf="@id/button3"
+            android:onClick="Onclickbutton"
+            android:tag="03"
+            tools:text="4" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button5"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button1"
+            android:onClick="Onclickbutton"
+            android:tag="10"
+            tools:text="5" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button6"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button2"
+            android:layout_toEndOf="@id/button5"
+            android:onClick="Onclickbutton"
+            android:tag="11"
+            tools:text="6" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button7"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button3"
+            android:layout_toEndOf="@id/button6"
+            android:onClick="Onclickbutton"
+            android:tag="12"
+            tools:text="7" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button8"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button4"
+            android:layout_toEndOf="@id/button7"
+            android:onClick="Onclickbutton"
+            android:tag="13"
+            tools:text="8" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button9"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button5"
+            android:onClick="Onclickbutton"
+            android:tag="20"
+            tools:text="9" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button10"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button6"
+            android:layout_toEndOf="@id/button9"
+            android:onClick="Onclickbutton"
+            android:tag="21"
+            tools:text="10" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button11"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button7"
+            android:layout_toEndOf="@id/button10"
+            android:onClick="Onclickbutton"
+            android:tag="22"
+            tools:text="11" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button12"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button8"
+            android:layout_toEndOf="@id/button11"
+            android:onClick="Onclickbutton"
+            android:tag="23"
+            tools:text="12" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button13"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button9"
+            android:onClick="Onclickbutton"
+            android:tag="30"
+            tools:text="13" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button14"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button10"
+            android:layout_toEndOf="@id/button13"
+            android:onClick="Onclickbutton"
+            android:tag="31"
+            tools:text="14" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button15"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button11"
+            android:layout_toEndOf="@id/button14"
+            android:onClick="Onclickbutton"
+            android:tag="32"
+            tools:text="15" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button16"
+            style="@style/Maygamebutton"
+            android:layout_below="@id/button12"
+            android:layout_toEndOf="@id/button15"
+            android:onClick="Onclickbutton"
+            android:tag="33"
+            tools:text="16" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/res"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/btn_back"
+        android:contentDescription="Restart"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_restart" />
+
+</FrameLayout>
