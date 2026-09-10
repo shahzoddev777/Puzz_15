@@ -23,7 +23,7 @@
         android:layout_gravity="top|center_horizontal"
         android:layout_marginTop="100dp"
         android:letterSpacing="0.05"
-        android:text="Puzzle 15"
+        android:text="@string/app_name"
         android:fontFamily="@font/rogonez"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
@@ -41,7 +41,7 @@
         android:gravity="center"
         android:lineSpacingExtra="6dp"
         android:padding="20dp"
-        android:text="Puzzle 15  — bu dunyodagi eng mashhur mantiqiy o'yinlardan biri. U 1870-yillarda AQShda ixtiro qilingan va qisqa vaqt ichida butun dunyoga tarqalgan.\n\nShahzodbek's Puzzle"
+        android:text="@string/info_description"
         android:textColor="#F4EFEF"
         android:textSize="15sp" />
 

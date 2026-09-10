@@ -15,10 +15,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
-
 public class HomeActivity extends AppCompatActivity {
-    AppCompatButton contino;
-    AppCompatButton btnexit;
+    private AppCompatButton contino;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,22 +35,24 @@ public class HomeActivity extends AppCompatActivity {
         button.setOnClickListener(v -> {
             String username = nameInput.getText().toString().trim();
             if (!username.isEmpty()) {
-
                 getSharedPreferences("PUZZLE_SAVE", MODE_PRIVATE).edit().clear().apply();
                 Intent intent = new Intent(this, GameActivity.class);
                 intent.putExtra("uernameMain", username);
                 startActivity(intent);
             } else {
-                Toast.makeText(this, "Ismingizni kiriting!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.msg_enter_name), Toast.LENGTH_SHORT).show();
             }
         });
+
         AppCompatButton info = findViewById(R.id.infon);
         info.setOnClickListener(view -> {
             Intent intent = new Intent(this, InfoActivity.class);
             startActivity(intent);
         });
+
         contino = findViewById(R.id.continio);
-        btnexit = findViewById(R.id.btn_exit);
+        AppCompatButton btnexit = findViewById(R.id.btn_exit);
+        
         contino.setOnClickListener(view -> {
             Intent intent = new Intent(this, GameActivity.class);
             startActivity(intent);
@@ -70,7 +71,7 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         TextView message = view.findViewById(R.id.dialog_message);
-        message.setText("Ilovadan chiqishni xohlaysizmi?");
+        message.setText(getString(R.string.msg_exit_confirm));
 
         AppCompatButton btnNo = view.findViewById(R.id.btn_no);
         AppCompatButton btnYes = view.findViewById(R.id.btn_yes);
@@ -86,9 +87,9 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        if (getSharedPreferences("PUZZLE_SAVE", MODE_PRIVATE).getBoolean("saved",false)){
+        if (getSharedPreferences("PUZZLE_SAVE", MODE_PRIVATE).getBoolean("saved", false)) {
             contino.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             contino.setVisibility(View.INVISIBLE);
         }
         super.onResume();

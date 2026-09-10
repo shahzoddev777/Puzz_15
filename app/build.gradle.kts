@@ -4,9 +4,7 @@ plugins {
 
 android {
     namespace = "shahzod.projects.puzzle15"
-    compileSdk {
-        version = release(37)
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "shahzod.projects.puzzle15"
@@ -20,8 +18,11 @@ android {
 
     buildTypes {
         release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             optimization {
-                enable = false
+                enable = true
             }
         }
     }

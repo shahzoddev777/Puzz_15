@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Puzzle 15</string>
+    <string name="msg_enter_name">Ismingizni kiriting!</string>
+    <string name="msg_exit_confirm">Ilovadan chiqishni xohlaysizmi?</string>
+    <string name="btn_no">Yo\'q</string>
+    <string name="btn_yes">Ha</string>
+    <string name="label_guest">Mehmon</string>
+    <string name="msg_restart_confirm">O\'yinni qaytadan boshlashni xohlaysizmi?</string>
+    <string name="msg_restarted">Restart berildi!</string>
+    <string name="label_score">Score</string>
+    <string name="msg_score_result">%1$s natijangiz: %2$d</string>
+    <string name="label_no_score">---</string>
+    <string name="label_top_score_format">%1$d. %2$s : %3$d</string>
+    <string name="hint_name">Person information</string>
+    <string name="btn_continue">Continue</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_info">Info</string>
+    <string name="btn_exit">Exit</string>
+    <string name="label_win">YOU WIN!</string>
+    <string name="label_top_players">TOP 3 PLAYERS</string>
+    <string name="btn_home">Home</string>
+    <string name="info_description">Puzzle 15 — bu dunyodagi eng mashhur mantiqiy o\'yinlardan biri. U 1870-yillarda AQShda ixtiro qilingan va qisqa vaqt ichida butun dunyoga tarqalgan.\n\nShahzodbek\'s Puzzle</string>
 </resources>

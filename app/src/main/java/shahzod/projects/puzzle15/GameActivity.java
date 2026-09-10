@@ -8,7 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RelativeLayout;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,10 +25,9 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 public class GameActivity extends AppCompatActivity {
-    private int[][] matrix = new int[4][4];
-    private TextView[] views = new TextView[16];
+    private final int[][] matrix = new int[4][4];
+    private final TextView[] views = new TextView[16];
     private SharedPreferences preferences;
     private String name;
     private int x = -1;
@@ -40,8 +39,6 @@ public class GameActivity extends AppCompatActivity {
     private int lastMovedValue = -1;
     private int previousEmptyIndex = -1;
 
-    private String playerUsername;
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +48,8 @@ public class GameActivity extends AppCompatActivity {
 
         name = getIntent().getStringExtra("uernameMain");
         if (name == null || name.isEmpty()) {
-            name = "Mehmon";
+            name = getString(R.string.label_guest);
         }
-        playerUsername = name;
         preferences = getSharedPreferences("PUZZLE_SAVE", MODE_PRIVATE);
         View mainView = findViewById(R.id.main);
         if (mainView != null) {
@@ -85,7 +81,7 @@ public class GameActivity extends AppCompatActivity {
         }
 
         TextView message = view.findViewById(R.id.dialog_message);
-        message.setText("O'yinni qaytadan boshlashni xohlaysizmi?");
+        message.setText(getString(R.string.msg_restart_confirm));
 
         AppCompatButton btnNo = view.findViewById(R.id.btn_no);
         AppCompatButton btnYes = view.findViewById(R.id.btn_yes);
@@ -98,7 +94,7 @@ public class GameActivity extends AppCompatActivity {
             lastMovedValue = -1;
             previousEmptyIndex = -1;
             loadMatrix();
-            Toast.makeText(GameActivity.this, "Restart berildi!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(GameActivity.this, getString(R.string.msg_restarted), Toast.LENGTH_SHORT).show();
         });
 
         dialog.show();
@@ -119,7 +115,6 @@ public class GameActivity extends AppCompatActivity {
         outState.putInt("xbutton", x);
         outState.putInt("ybutton", y);
         super.onSaveInstanceState(outState);
-
     }
 
     @Override
@@ -142,11 +137,10 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
         }
-
     }
 
     private void loadViews() {
-        RelativeLayout relativeLayout = findViewById(R.id.relativeLayout);
+        ViewGroup relativeLayout = findViewById(R.id.relativeLayout);
         if (relativeLayout == null) return;
         int childCount = Math.min(relativeLayout.getChildCount(), 16);
         for (int i = 0; i < childCount; i++) {
@@ -157,10 +151,9 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
-
     @Override
     protected void onPause() {
-        if (name == null) name = "Mehmon";
+        if (name == null) name = getString(R.string.label_guest);
         preferences.edit()
                 .putInt("count", count)
                 .putString("name", name)
@@ -187,7 +180,7 @@ public class GameActivity extends AppCompatActivity {
         if (preferences.getBoolean("saved", false)) {
             count = preferences.getInt("count", 0);
             textCount.setText(String.valueOf(count));
-            name = preferences.getString("name", "Mehmon");
+            name = preferences.getString("name", getString(R.string.label_guest));
             String massivStr = preferences.getString("massiv", "");
             if (!massivStr.isEmpty() && !massivStr.equals("non")) {
                 String[] str = massivStr.split("#");
